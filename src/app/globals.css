@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paper and ink aesthetic */
+  --background: #fdfbf7;
+  --foreground: #2d2a26;
+  --ink-light: #4a4a4a;
+  --ink-dark: #1a1a1a;
+  --paper: #f4f1ea;
+  --primary: #8b2626; /* Crimson red */
+  --secondary: #2f5f4f; /* Jade green */
+  --gold: #d4af37;
+  --border: #e2dcd0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-ink-light: var(--ink-light);
+  --color-ink-dark: var(--ink-dark);
+  --color-paper: var(--paper);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-gold: var(--gold);
+  --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark mode - inverted paper/ink */
+    --background: #1a1918;
+    --foreground: #e6e2d8;
+    --ink-light: #a39f98;
+    --ink-dark: #e6e2d8;
+    --paper: #262422;
+    --primary: #a33b3b;
+    --secondary: #42826c;
+    --border: #3d3b38;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.05"/></svg>');
 }
